@@ -9,4 +9,8 @@ export class Tab1Page {
 
   constructor() {}
 
+  funcButton() {
+    alert("Ola estou sendo clicado")
+  }
+
 }
