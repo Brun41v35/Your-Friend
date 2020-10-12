@@ -1,7 +1,13 @@
 .ButtonPosition{
-    position: relative;
     width:200px;
-    margin:auto;
-    margin-top:70vh;
+    margin-left:11vh;
+    margin-top:60vh;
+    margin-right:50vh;
+    margin-bottom:60vh;
+}
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

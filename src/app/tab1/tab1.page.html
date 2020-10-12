@@ -6,15 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="container">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Frases</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-list style="text-align:center">
-    <ion-button color="secondary" (click)='funcButton()' class="ButtonPosition"> Pressione aqui </ion-button>
-  </ion-list>
+  <p id="frase" style="text-align: center; margin-top: 50px;">
+    Sua frase aqui</p>
+
+  <ion-button color="secondary" (click)='funcButton()' class="ButtonPosition"> Pressione aqui </ion-button>
 
 </ion-content>
