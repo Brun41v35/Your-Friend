@@ -10,11 +10,10 @@ export class Tab1Page {
   constructor() {}
 
   funcButton() {
-    let arr = ["Voce e a melhor pessoa","Acredite nos seus sonhos","Voce e incrivel!!"];
+    const arr = ["Voce é a melhor pessoa","Acredite nos seus sonhos","Voce é incrivel!!!"];
 
-      var index = Math.floor(Math.random() * 3);  
-      // alert(arr[index]);
-      document.getElementById("frase").innerText = arr[index]
-    
+    const index = Math.floor(Math.random() * 3);  
+
+    document.getElementById("frase").innerText = arr[index]
   }
 }
