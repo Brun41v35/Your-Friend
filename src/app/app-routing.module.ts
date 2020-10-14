@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, Router, RouterModule, Routes } from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 const routes: Routes = [
   {
@@ -9,7 +10,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   }
+
 ];
 @NgModule({
   imports: [
@@ -17,4 +23,13 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  constructor(private plataform: Platform, private router: Router) {
+    plataform.ready().then()
+    if(false){
+      router.navigateByUrl('/')
+    } else {
+      router.navigateByUrl('/login')
+    }
+  }
+}
