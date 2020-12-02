@@ -21,7 +21,9 @@ export class Tab1Page {
       "Lute. Acredite. Conquiste. Perca. Deseje. Espere. Alcance",
       "Só existe um êxito: a capacidade de levar a vida que se quer",
       "A coragem não é ausência do medo; é a persistência apesar do medo",
-      "Só se pode alcançar um grande êxito quando nos mantemos fiéis a nós mesmos"
+      "Só se pode alcançar um grande êxito quando nos mantemos fiéis a nós mesmos",
+      "Nossos fracassos, às vezes, são mais frutíferos do que os êxitos",
+      "A confiança em si mesmo é o primeiro segredo do sucesso"
     ];
 
     const index = Math.floor(Math.random() * 11);  
