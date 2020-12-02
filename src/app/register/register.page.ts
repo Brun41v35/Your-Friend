@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterService, User } from '../services/register.service';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -9,21 +9,26 @@ import { RegisterService, User } from '../services/register.service';
 })
 
 export class RegisterPage implements OnInit {
-
   //Variaveis
   username: string;
   password: string;
-  key: string = "nome";
-  otherKey: string = "outroNome";
 
-  constructor(private router: Router, private registerService: RegisterService) { }
+  key: string = "username";
+  otherKey: string = "password";
+
+  constructor(
+    private router: Router, 
+    private registerService: RegisterService,
+  ) {}
 
   ngOnInit() {}
 
   save(){
     this.registerService.save(this.key, this.username);
+
     this.registerService.save(this.otherKey, this.password);
-    alert("Salvo com sucesso")
+
+    alert("Usuário criado com sucesso!")
   }
 
   load(){
