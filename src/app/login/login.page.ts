@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-login',
@@ -7,24 +8,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  //Variaveis
+  username: string;
+  password: string
 
-  username:string;
-  password:string;
+  key: string = "username";
+  otherKey: string = "password";
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private registerService: RegisterService,
+  ) {}
 
   ngOnInit() {}
 
-  goLogin() {
-    if(this.username == "Bruno" && this.password == "123") {
+  async goLogin() {
+    var login = await this.registerService.get(this.key, this.otherKey);
+
+    if (this.username === login.currentUser && this.password === login.currentPassword) {
       this.router.navigate(['tabs'])
-    } else {
-      alert("Esse usuario nao existe")
+    } 
+    else {
+      alert("Este usuário não existe!")
     }
   }
 
   goRegister(){
-     this.router.navigate(['register'])
+    this.router.navigate(['register'])
   }
-
 }

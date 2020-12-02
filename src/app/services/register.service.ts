@@ -8,17 +8,24 @@ export class RegisterService {
 
   constructor(private storage: Storage) {}
 
-  public save(key: string, username: string) {
-    this.storage.set(key, username);
+  public async save(key: string, username: string) {
+    await this.storage.set(key, username);
   }
 
-  public get(key: string, otherKey: string) {
-     this.storage.get(key).then((val) => {
-      console.log('Your username is', val);
+  public async get(key: string, otherKey: string) {
+    var currentUser: string;
+    var currentPassword: string;
+
+    await this.storage.get(key).then((val) => {
+      currentUser = val;
     });
-    this.storage.get(otherKey).then((val) => {
-      console.log('Your password is', val);
+    await this.storage.get(otherKey).then((val) => {
+      currentPassword = val;
     });
+
+    console.log({ currentUser, currentPassword });
+
+    return { currentUser, currentPassword };
   }
 }
 
