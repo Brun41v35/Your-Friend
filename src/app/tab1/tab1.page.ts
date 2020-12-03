@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-tab1',
@@ -9,8 +10,13 @@ export class Tab1Page {
 
   constructor() {}
 
-  funcButton() {
+  async funcButton() {
+    const { data } = await axios.get('https://allugofrases.herokuapp.com/frases');
+
+    const phrases = data.map(item => item.frase);
+
     const arr = [
+      ...phrases,
       "Você é a melhor pessoa!",
       "Acredite nos seus sonhos!",
       "Você é incrivel!",
