@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list id="inputs">
 
     <ion-item>
       <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
@@ -17,7 +17,7 @@
 
   </ion-list>
 
-  <ion-button shape="round" expand="full" (click)="save()">Criar Usuario</ion-button>
-  <ion-button shape="round" expand="full" color="medium" (click)="goBack()">Voltar</ion-button>
+  <ion-button class="button" shape="round" expand="full" (click)="save()">Criar Usuario</ion-button>
+  <ion-button class="button" shape="round" expand="full" color="medium" (click)="goBack()">Voltar</ion-button>
 
 </ion-content>

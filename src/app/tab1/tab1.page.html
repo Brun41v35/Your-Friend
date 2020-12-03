@@ -13,9 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <p id="frase" style="text-align: center; margin-top: 50px;">
-    Sua frase aqui</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Estamos pensando em você...</ion-card-title>
+    </ion-card-header>
 
-  <ion-button color="secondary" (click)='funcButton()' class="ButtonPosition"> Pressione aqui </ion-button>
+    <ion-card-content id="frase"></ion-card-content>
+  </ion-card>
 
+  <ion-button color="secondary" (click)='funcButton()' class="ButtonPosition"> Aperte aqui </ion-button>
 </ion-content>
