@@ -13,8 +13,6 @@ export class Tab4Page implements OnInit {
   ngOnInit() {}
 
   goToNote() {
-    // this.router.navigate(['register'])
-    alert("Yes, i am working!")
+    this.router.navigate(['anotacoes-usuario'])
   }
-
 }

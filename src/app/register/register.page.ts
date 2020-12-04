@@ -9,6 +9,7 @@ import { RegisterService } from '../services/register.service';
 })
 
 export class RegisterPage implements OnInit {
+  
   //Variaveis
   username: string;
   password: string;

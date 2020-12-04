@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Faça sua Anotação</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Voltar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list id="inputs">
+
+    <ion-item>
+      <ion-input placeholder="Digite aqui.."></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button class="button" shape="round" expand="full" (click)="save()">Adicionar Anotacao</ion-button>
+
+</ion-content>
