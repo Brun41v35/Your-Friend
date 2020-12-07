@@ -14,10 +14,19 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },  {
+  },
+  {
     path: 'frases',
     loadChildren: () => import('./frases/frases.module').then( m => m.FrasesPageModule)
+  },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },  {
+    path: 'anotacoes-usuario',
+    loadChildren: () => import('./anotacoes-usuario/anotacoes-usuario.module').then( m => m.AnotacoesUsuarioPageModule)
   }
+
 
 
 ];

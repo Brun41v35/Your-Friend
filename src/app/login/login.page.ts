@@ -8,7 +8,7 @@ import { RegisterService } from '../services/register.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  //Variaveis
+  
   username: string;
   password: string
 
