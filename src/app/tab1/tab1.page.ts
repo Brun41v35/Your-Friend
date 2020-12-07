@@ -11,25 +11,15 @@ export class Tab1Page {
   constructor() {}
 
   async funcButton() {
-    const { data } = await axios.get('https://allugofrases.herokuapp.com/frases');
+    const { data: first_data } = await axios.get('https://allugofrases.herokuapp.com/frases');
+    const first_phrases = first_data.map(item => item.frase);
 
-    const phrases = data.map(item => item.frase);
+    const { data: second_data } = await axios.get('https://aps-api.gateway.linkapi.com.br/v1/frases');
+    const second_phrases = second_data.frases;
 
     const arr = [
-      ...phrases,
-      "Você é a melhor pessoa!",
-      "Acredite nos seus sonhos!",
-      "Você é incrivel!",
-      "A persistência é o caminho do êxito", 
-      "No meio da dificuldade encontra-se a oportunidade",
-      "Imagine uma nova história para sua vida e acredite nela",
-      "O sucesso é ir de fracasso em fracasso sem perder entusiasmo",
-      "Lute. Acredite. Conquiste. Perca. Deseje. Espere. Alcance",
-      "Só existe um êxito: a capacidade de levar a vida que se quer",
-      "A coragem não é ausência do medo; é a persistência apesar do medo",
-      "Só se pode alcançar um grande êxito quando nos mantemos fiéis a nós mesmos",
-      "Nossos fracassos, às vezes, são mais frutíferos do que os êxitos",
-      "A confiança em si mesmo é o primeiro segredo do sucesso"
+      ...first_phrases,
+      ...second_phrases
     ];
 
     const index = Math.floor(Math.random() * 11);  
