@@ -13,22 +13,18 @@
 
   <ion-list>
 
-    <ion-item>
-      <ion-label>
-        <h2><b>1°</b></h2>
-        <h3>Pratique exercícios físicos</h3>
-        <p>A saúde da mente começa pelo corpo.</p>
-      </ion-label>
-    </ion-item>
+    <ion-item-sliding *ngFor="let item of anotacoes; let posicaoNaLista = index">
 
-    <ion-item>
-      <ion-label>
-        <h2><b>2°</b></h2>
-        <h3>Mantenha a agenda em dia</h3>
-        <p>Uma das manifestações é a falta de iniciativa.</p>
-      </ion-label>
-    </ion-item>
-    
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(posicaoNaLista)">Apagar</ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        {{item}}
+      </ion-item>
+
+    </ion-item-sliding>
+
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

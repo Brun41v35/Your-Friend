@@ -12,7 +12,13 @@ export class Tab4Page implements OnInit {
 
   ngOnInit() {}
 
+  anotacoes = ['Preciso arrumar o meu quarto', 'Levar o meu cachorro para passear', 'Finalizar atividades'];
+
   goToNote() {
     this.router.navigate(['anotacoes-usuario'])
+  }
+
+  delete(index){
+    this.anotacoes.splice(index, 1);
   }
 }
