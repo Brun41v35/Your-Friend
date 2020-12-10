@@ -8,15 +8,11 @@
 </ion-header>
 
 <ion-content padding>
-
   <ion-list id="inputs">
-
     <ion-item>
-      <ion-input placeholder="Digite aqui.."></ion-input>
+      <ion-input [(ngModel)]="input_anotacao" placeholder="Digite aqui.."></ion-input>
     </ion-item>
-
   </ion-list>
 
-  <ion-button class="button" shape="round" expand="full" (click)="save()">Adicionar Anotacao</ion-button>
-
+  <ion-button class="button" shape="round" expand="full" (click)="save()">Adicionar Anotação</ion-button>
 </ion-content>

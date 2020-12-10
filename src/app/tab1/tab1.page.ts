@@ -21,8 +21,6 @@ export class Tab1Page {
       ...first_phrases,
       ...second_phrases
     ];
-    
-    console.log(arr);
 
     const index = Math.floor(Math.random() * 11);  
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab4',
@@ -7,18 +8,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
-
-  constructor(private router: Router,) {}
+  constructor(
+    private router: Router,
+    private storage: Storage,
+  ) {
+    this.renderAnotacoes()
+  }
 
   ngOnInit() {}
 
-  anotacoes = ['Preciso arrumar o meu quarto', 'Levar o meu cachorro para passear', 'Finalizar atividades'];
+  anotacoes = [];
+  async renderAnotacoes() {
+    await this.storage.get('anotacoes').then((val) => {
+      if (!val) {
+        this.anotacoes = [];
+      }
+      else {
+        this.anotacoes = val;
+      }
+    });
+  }
 
   goToNote() {
     this.router.navigate(['anotacoes-usuario'])
   }
 
-  delete(index){
+  delete(index: number){
     this.anotacoes.splice(index, 1);
   }
 }

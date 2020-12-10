@@ -23,8 +23,6 @@ export class RegisterService {
       currentPassword = val;
     });
 
-    console.log({ currentUser, currentPassword });
-
     return { currentUser, currentPassword };
   }
 }
