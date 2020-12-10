@@ -33,7 +33,8 @@ export class Tab4Page implements OnInit {
     this.router.navigate(['anotacoes-usuario'])
   }
 
-  delete(index: number){
+  async delete(index: number){
     this.anotacoes.splice(index, 1);
+    await this.storage.set('anotacoes', this.anotacoes);
   }
 }
